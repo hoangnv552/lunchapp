@@ -1,0 +1,7 @@
+<p ng-repeat="(key, menu) in menus">
+	{{menu.name}}--{{menu.price}} | <a href="#/menus/{{key}}/view">View</a> | <a href="" ng-click="deleteMenu(key)">Delete</a>
+</p>
+<br>
+Name:<br> <input ng-model="menu.name"><br>
+Price:<br> <input ng-model="menu.price"><br>
+<button ng-click="addMenu()">Add</button>

@@ -1,0 +1,15 @@
+<!-- REGISTER -->
+<form id="frmRegister" role="form" ng-submit="register()">
+	 <h2>Register</h2>
+
+	<div class="form-group">
+		<label for="txtRegEmail">Email address</label>
+		<input type="email" ng-model="user.email" class="form-control lunch-input" id="txtEmail" placeholder="Enter email"/>
+	</div>
+	<div class="form-group lunch-input">
+		<label for="txtRegPass">Password</label>
+		<input type="password" class="form-control lunch-input" id="txtPass" placeholder="Password" ng-model="user.password" />
+	</div>
+	<button type="submit" class="btn btn-default">Register</button>
+</form>
+<!-- / REGISTER -->

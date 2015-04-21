@@ -1,0 +1,148 @@
+body{
+	margin: 0;
+}
+.contents{
+	width: 1030px;
+	margin: 0 auto;
+}
+.header{
+	width: 1000px;
+	margin: 0 auto;
+	height: 145px;
+}
+.banner{
+	height: 85px;
+	width: 100%;
+}
+.banner img{
+	margin-top: 15px;
+}
+.banner h2{
+	margin-top: 0px;
+	font-size: 16px;
+	color: #0083d1;
+	font-weight: normal;
+}
+.banner .login{
+	float: right;
+	width: 85px;
+	height: 20px;
+	margin-top: -50px;
+}
+.login .icon-login{
+	float: left;
+	margin-top: -12px;
+}
+.login .icon-comma{
+	float: right;
+	margin-top: -12px;
+}
+.login a{
+	color: #0083d1;
+	float: left;
+	margin-left: 8px;
+	text-decoration: none;
+}
+.header .menu{
+	float: left;
+	background: #1f1a17;
+	width: 1030px;
+	height: 45px;
+	margin-left: -15px;
+}
+.header .menu ul{
+	margin: 0;
+	padding: 0;
+}
+.header .menu ul li{
+	list-style: none;
+	float: left;
+	padding: 12px 20px;
+}
+.header .menu ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+.header .menu ul li:hover{
+	background: #c2c2c2;
+}
+.footer{
+	float: left;
+	width: 100%;
+	height: 60px;
+	border-top: 1px solid #d1d1d1;
+	margin-top: 40px;
+}
+.footer h2{
+	font-size: 16px;
+	font-weight: normal;
+	color: #787878;
+}
+.header .menu ul .active{
+	background: #c2c2c2;
+}
+.container{
+	border: 1px solid #d1d1d1;
+}
+.project{
+	width: 1000px;
+	margin: 0 auto;
+}
+.projectInfo{
+	width: 100%;
+}
+.projectInfo h3{
+	color: #0083d1;
+	font-size: 16px;
+}
+.project-search input{
+	width: 400px;
+	height: 24px;
+	border: 1px solid #d1d1d1;
+}
+
+/*----------Menu------------*/
+.projectInfo h3{
+	margin-bottom: 50px;
+}
+.project-search{
+	margin-top: 20px;
+}
+.project-table{
+	margin-top: 30px;
+}
+
+/*----------Pagination----------*/
+.pagination ul{
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+.pagination ul li{
+	list-style: none;
+	float: left;
+}
+
+/*----------Table-----------*/
+.table{
+	width: 100%;
+}
+.table th{
+	font-weight: normal;
+	background: #0083d1;
+	height: 58px;
+	margin: 0px;
+	padding: 0;
+	color: #ffffff;
+}
+table, th, td{
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+}
+.table td{
+	height: 65px;
+	text-align: center;
+}
+.lunch-input{
+	width: 300px;
+}
