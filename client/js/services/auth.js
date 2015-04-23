@@ -36,7 +36,7 @@
 				var deferred = $q.defer();
 				rootRef.createUser(userObj, function(err) {
 					if (!err) {
-						deferred.resolve(123);
+						deferred.resolve(true);
 					} else {
 						deferred.reject(err);
 					}

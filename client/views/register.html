@@ -1,15 +1,26 @@
-<!-- REGISTER -->
-<form id="frmRegister" role="form" ng-submit="register()">
-	 <h2>Register</h2>
+<div class="container-login">
 
-	<div class="form-group">
-		<label for="txtRegEmail">Email address</label>
-		<input type="email" ng-model="user.email" class="form-control lunch-input" id="txtEmail" placeholder="Enter email"/>
+	<div class="login-form clearfix">
+		<div class="user-name">
+			<h2>Register</h2><br>
+			<span class="error">{{error}}</span>
+			<br>
+			<label>Username</label><br>
+			<input type="text" ng-model="user.email" class="input-text"></input>
+			<label class="error">{{errorName}}</label>
+		</div>
+		<div class = "password">
+			<label>Password</label><br>
+			<input type="password" ng-model="user.password" class="input-text"></input>
+			<label class="error">{{errorPass}}</label>
+		</div>
+		<div class = "password">
+			<label>RePassword</label><br>
+			<input type="password" ng-model="user.repassword" class="input-text"></input>
+			<label class="error">{{errorPass}}</label>
+		</div>
+		<div>
+			<button ng-click="register()">Register</button>
+		</div>
 	</div>
-	<div class="form-group lunch-input">
-		<label for="txtRegPass">Password</label>
-		<input type="password" class="form-control lunch-input" id="txtPass" placeholder="Password" ng-model="user.password" />
-	</div>
-	<button type="submit" class="btn btn-default">Register</button>
-</form>
-<!-- / REGISTER -->
+</div>

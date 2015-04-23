@@ -24,7 +24,7 @@
 			controller: 'authCtrl'
 		}).
 		when('/register', {
-			templateUrl: 'views/login.html',
+			templateUrl: 'views/register.html',
 			controller: 'authCtrl'
 		}).
 		otherwise({
@@ -33,14 +33,16 @@
 	}]).run(['$location', 'Session', '$rootScope', function($location, Session, $rootScope) {
 		$rootScope.$on('$locationChangeStart', function(event, next, prev) {
 
-			if (next.split('#')[1] !== '/login') {
-				if (!Session.isLoggedIn()) {
-					event.preventDefault();
-					$location.path('/login');
-				} else {
-					// Session.logout(false);
-				}
-			}
+			// if (next.split('#')[1] !== '/login') {
+				// if (!Session.isLoggedIn()) {
+				// 	console.log(111);
+				// 	event.preventDefault();
+				// 	$location.path('/login');
+				// } else {
+				// 	console.log(222);
+				// 	Session.logout(false);
+				// }
+			// }
 		});
 	}]);
 
