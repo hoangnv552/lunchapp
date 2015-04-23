@@ -1,10 +1,15 @@
 ;(function() {
 	'use strict';
 
-	var authCtrl = function($scope, $location, Auth) {
+	var authCtrl = function($scope, $location, Auth, $cookieStore, Session) {
 		$scope.login = function() {
+
+			console.log($cookieStore.get('isLoggedIn'));
 			Auth.authWithPassword($scope.user).then(function(response) {
-				console.log(response);
+				if (response.uid) {
+					Session.login();
+					console.log($cookieStore.get('isLoggedIn'));
+				}
 			});
 		};
 
@@ -19,7 +24,7 @@
 		};
 	};
 
-	authCtrl.$inject = ['$scope', '$location', 'Auth'];
+	authCtrl.$inject = ['$scope', '$location', 'Auth', '$cookieStore', 'Session'];
 
 	angular.module('lunchController').controller('authCtrl', authCtrl);
 })();

@@ -5,7 +5,8 @@
 			'ngRoute',
 			'lunchController',
 			'lunchServices',
-			'firebase'
+			'firebase',
+			'ngCookies'
 		]);
 
 	lunchApp.config(['$routeProvider', function($routeProvider) {
@@ -18,12 +19,28 @@
 			templateUrl: 'views/view.html',
 			controller: 'menuCtrl'
 		}).
+		when('/login', {
+			templateUrl: 'views/login.html',
+			controller: 'authCtrl'
+		}).
 		when('/register', {
-			templateUrl: 'views/register.html',
+			templateUrl: 'views/login.html',
 			controller: 'authCtrl'
 		}).
 		otherwise({
 			redirectTo: '/menus'
+		});
+	}]).run(['$location', 'Session', '$rootScope', function($location, Session, $rootScope) {
+		$rootScope.$on('$locationChangeStart', function(event, next, prev) {
+
+			if (next.split('#')[1] !== '/login') {
+				if (!Session.isLoggedIn()) {
+					event.preventDefault();
+					$location.path('/login');
+				} else {
+					// Session.logout(false);
+				}
+			}
 		});
 	}]);
 

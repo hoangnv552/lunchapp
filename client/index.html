@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Lunch App</title>
-	<link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/partials.css">
 
 	<script src="vendors/jquery/dist/jquery.js"></script>
 	<script src="vendors/bootstrap/dist/js/bootstrap.js"></script>
@@ -20,43 +20,49 @@
 	<script src="js/services/services.js"></script>
 	<script src="js/services/data.js"></script>
 	<script src="js/services/auth.js"></script>
+	<script src="js/services/session.js"></script>
 
 	<script src="js/controllers/controller.js"></script>
+	<script src="js/controllers/app-controller.js"></script>
 	<script src="js/controllers/menu.js"></script>
 	<script src="js/controllers/auth.js"></script>
 
 </head>
-<body>
-
-<div class="contents">
-	<div class="header">
-		<div class="banner">
-			<img src="./img/logo.png" alt="">
-			<h2>Lunch App NTQ Sytems</h2>
-			<div class="login">
-				<span class="icon-login"><img src="./img/icon-login.png"></span>
-				<a href="#/login">Logout</a>
-				<span class="icon-comma"><img src="./img/comma.png"></span>
+<body ng-controller="appController">
+	{{isLoggedIn()}}
+	<div ng-show="isLoggedIn()">
+		<div class="contents">
+			<div class="header">
+				<div class="banner">
+					<img src="./img/logo.png" alt="">
+					<h2>Lunch App NTQ Sytems</h2>
+					<div class="login">
+						<span class="icon-login"><img src="./img/icon-login.png"></span>
+						<a href="#/login">Logout</a>
+						<span class="icon-comma"><img src="./img/comma.png"></span>
+					</div>
+				</div>
+				<div class="menu">
+					<ul>
+						<li ng-class="{active: isActive('/dashbroad')}"><a href="#/dashbroad">Dashbroad</a></li>
+						<li ng-class="{active: isActive('/menus')}"><a href="#/menus">Menu</a></li>
+						<li ng-class="{active: isActive('/project')}"><a href="#/project">Project</a></li>
+						<li ng-class="{active: isActive('/client')}"><a href="#/client">Client</a></li>
+						<li ng-class="{active: isActive('/estimation')}"><a href="#/estimation">Estimation</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="container">
+				<div ng-view class="view-frame"></div>
+			</div>
+			<div class="footer">
+				<h2>LUNCH APP SYSTEM</h2>
 			</div>
 		</div>
-		<div class="menu">
-			<ul>
-				<li ng-class="{active: isActive('/dashbroad')}"><a href="#/dashbroad">Dashbroad</a></li>
-				<li ng-class="{active: isActive('/quotation')}"><a href="#/quotation">Quotation</a></li>
-				<li ng-class="{active: isActive('/project')}"><a href="#/project">Project</a></li>
-				<li ng-class="{active: isActive('/client')}"><a href="#/client">Client</a></li>
-				<li ng-class="{active: isActive('/estimation')}"><a href="#/estimation">Estimation</a></li>
-			</ul>
-		</div>
 	</div>
-	<div class="container">
-		<div ng-view class="view-frame"></div>
+	<div ng-hide="isLoggedIn()">
+		<div ng-view class="view-frame">
 	</div>
-	<div class="footer">
-		<h2>DAIKIN QUATATION SYSTEM</h2>
-	</div>
-</div>
-
 </body>
 </html>
 
