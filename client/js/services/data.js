@@ -24,6 +24,9 @@
 			},
 			deleteMenu: function(date, menuId) {
 				return $firebaseObject(ref.child('menus').child(date).child(menuId)).$remove();
+			},
+			updateMenu: function(date, menuId, menu) {
+				return $firebaseArray(ref.child('menus').child(date).child(menuId).$save(menu));
 			}
 		};
 

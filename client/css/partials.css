@@ -53,7 +53,15 @@ table, th, td{
 }
 .table td input{
 	height: 30px;
-	width: 72%;
+	width: 83%;
+}
+.table .price{
+	width: 55%;
+	height: 30px;
+}
+.table .sidedishes{
+	width: 93%;
+	height: 30px;
 }
 .table td a{
 	color: #0083d1;
@@ -116,7 +124,7 @@ table, th, td{
 	margin-left: 20px;
 }
 .td-str p{
-	margin-left: 20px;
+	margin-left: 5px;
 }
 .td-num{
 	text-align: center;

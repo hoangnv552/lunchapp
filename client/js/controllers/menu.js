@@ -20,14 +20,17 @@
 				});
 			};
 
+			$scope.editingData = [];
+
 			$scope.deleteMenu = function(menuId) {
 				console.log(menuId);
 				Menus.deleteMenu(date, menuId);
 			};
 
-			// console.log(menuId);
-			// $scope.item = Menus.get(menuId);
-			// console.log($scope.item);
+			$scope.updateMenu = function(menuId) {
+				console.log(menuId);
+				Menus.updateMenu(date, menuId, $scope.menu);
+			};
 		}
 	};
 

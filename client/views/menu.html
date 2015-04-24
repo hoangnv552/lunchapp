@@ -36,22 +36,28 @@
                 <tr ng-repeat="(key, menu) in menus">
                     <td class="td-num">{{$index + 1}}</td>
                     <td class="td-str">
-                    	<p ng-hide="!editingData[key]">{{menu.name}}</p>
-                    	<p ng-show="!editingData[key]"><input type="text" ng-model="menu.name"></p>
+                    	<p ng-hide="isEdit">{{menu.name}}</p>
+                    	<p ng-show="isEdit"><input type="text" ng-model="menu.name"></p>
                     </td>
                     <td class="td-str">
-                    	<p ng-hide="!editingData[key]">{{menu.mainDish}}</p>
-                    	<p ng-show="!editingData[key]"><input type="text" ng-model="menu.mainDish"></p>
+                    	<p ng-hide="isEdit">{{menu.mainDish}}</p>
+                    	<p ng-show="isEdit"><input type="text" ng-model="menu.mainDish"></p>
                     </td>
                     <td class="td-str">
-                    	<p ng-hide="!editingData[key]">{{menu.sideDishes}}</p>
-                    	<p ng-show="!editingData[key]"><input type="text" ng-model="menu.sideDishes"></p>
+                    	<p ng-hide="isEdit">{{menu.sideDishes}}</p>
+                    	<p ng-show="isEdit"><input type="text" ng-model="menu.sideDishes" class="sidedishes"></p>
                     </td>
+                    <td class="td-str">
+                    	<p ng-hide="isEdit">{{menu.price}}</p>
+                    	<p ng-show="isEdit"><input type="text" ng-model="menu.price" class="price"></p>
+                    </td>
+
                     <td class="td-num">
-                    	<p ng-hide="!editingData[key]">{{menu.price}}</p>
-                    	<p ng-show="!editingData[key]"><input type="text" ng-model="menu.price"></p>
+                        <a ng-hide="isEdit" href="" ng-click="isEdit=true">Edit</a>
+                        <a ng-show="isEdit" href="" ng-click="updateMenu(key); isEdit=false">Update</a>
+                        &nbsp|&nbsp
+                        <a href="" ng-click="deleteMenu(key)">Delete</a>
                     </td>
-                    <td class="td-num"><a href="#/menus/{{key}}/add">Edit</a>&nbsp|&nbsp<a href="" ng-click="deleteMenu(key)">Delete</a></td>
                 </tr>
             </tbody>
         </table>
