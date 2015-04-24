@@ -1,22 +1,26 @@
 <div class="container-login">
 
 	<div class="login-form clearfix">
+		<form name="myForm">
 		<div class="user-name">
 			<h2>Register</h2><br>
 			<span class="error">{{error}}</span>
 			<br>
 			<label>Username</label><br>
-			<input type="text" ng-model="user.email" class="input-text"></input>
+			<input type="email" name="input" ng-model="user.email" class="input-text1" required></input>
+			<div role="alert">
+				<span class="error" ng-show="myForm.input.$error.email">Not valid email!</span>
+			</div>
 			<label class="error">{{errorName}}</label>
 		</div>
-		<div class = "password">
+		<div class="password">
 			<label>Password</label><br>
-			<input type="password" ng-model="user.password" class="input-text"></input>
+			<input type="password" ng-model="user.password" class="input-text" required></input>
 			<label class="error">{{errorPass}}</label>
 		</div>
-		<div class = "password">
+		<div class="password">
 			<label>RePassword</label><br>
-			<input type="password" ng-model="user.repassword" class="input-text"></input>
+			<input type="password" ng-model="user.repassword" class="input-text" required></input>
 			<label class="error">{{errorPass}}</label>
 		</div>
 		<div>

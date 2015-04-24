@@ -51,6 +51,10 @@ table, th, td{
 .table td{
 	height: 50px;
 }
+.table td input{
+	height: 30px;
+	width: 72%;
+}
 .table td a{
 	color: #0083d1;
 }
@@ -83,7 +87,7 @@ table, th, td{
 
 /*---------------Quotation--------------*/
 .quotation-th1{
-	width: 43px;
+	width: 65px;
 }
 .quotation-th2{
 	width: 180px;
@@ -92,7 +96,7 @@ table, th, td{
 	width: 380px;
 }
 .quotation-th4{
-	width: 60px;
+	width: 65px;
 }
 .quotation-th5{
 	width: 60px;
@@ -102,7 +106,7 @@ table, th, td{
 }
 .quotation-input{
 	width: 100%;
-	height: 266px;
+	height: 110px;
 }
 .quotation-model{
 	width: 100%;
@@ -115,7 +119,7 @@ table, th, td{
 	margin-left: 20px;
 }
 .td-num{
-	text-align: right;
+	text-align: center;
 }
 .quotation-table{
 	margin-top: 12px;
@@ -138,7 +142,7 @@ table, th, td{
 	border: 1px solid #e3e3e3;
 }
 .quotation-input-left .input1{
-	margin-left: 43px;
+	margin-left: 25px;
 }
 .quotation-input-left .input2{
 	margin-left: 39px;
@@ -163,7 +167,7 @@ table, th, td{
 	position: relative;;
 }
 .quotation-input-right .input1{
-	margin-left: 24px;
+	margin-left: 13px;
 }
 .quotation-input-right .input2{
 	margin-left: 33px;
@@ -403,6 +407,13 @@ table, th, td{
 .password{
 	margin-top: 35px;
 	margin-bottom: 25px;
+}
+.input-text1{
+	width: 104%;
+	height: 40px;
+	border: 1px solid #cfcfcf;
+	background-color: #fbfbfb;
+	margin-top: 3px;
 }
 .input-text{
 	width: 100%;
@@ -670,9 +681,6 @@ table, th, td{
 }
 .quotation-total input{
 	width: 60px;
-	text-align: right;
-}
-.quotation-table input{
 	text-align: right;
 }
 input[type="text"],

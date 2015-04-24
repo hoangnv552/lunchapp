@@ -1,7 +1,59 @@
-<p ng-repeat="(key, menu) in menus">
-	{{menu.name}}--{{menu.price}} | <a href="#/menus/{{key}}/view">View</a> | <a href="" ng-click="deleteMenu(key)">Delete</a>
-</p>
-<br>
-Name:<br> <input ng-model="menu.name"><br>
-Price:<br> <input ng-model="menu.price"><br>
-<button ng-click="addMenu()">Add</button>
+<div class="project">
+    <div class="projectInfo">
+        <h3>Add menu</h3>
+    </div>
+    <div class="quotation-input">
+        <div class="quotation-input-left">
+            <label>Menu name:</label>
+            <input type="text" ng-model="menu.name" class="input1">
+            <br>
+            <label>Main dish:</label>
+            <input type="text" ng-model="menu.mainDish" class="input2">
+        </div>
+        <div class="quotation-input-right">
+            <label>Side dishes:</label>
+            <input type="text" ng-model="menu.sideDishes" class="input1">
+            <br>
+            <label>Price:</label>
+            <input type="text" ng-model="menu.price" class="input3">
+        </div>
+    </div>
+    <div class="save-button-quotation">
+        <button ng-click="addMenu()" class="save">Add</button>
+    </div>
+
+    <div class="project-table quotation-table">
+        <table ng-table="tableParams" class="table">
+            <tr>
+                <th class="quotation-th1">No.</th>
+                <th class="quotation-th2">Name</th>
+                <th class="quotation-th2">Main dish</th>
+                <th class="quotation-th3">Side dishes</th>
+                <th class="quotation-th4">Price</th>
+                <th class="quotation-th7">Action</th>
+            </tr>
+            <tbody>
+                <tr ng-repeat="(key, menu) in menus">
+                    <td class="td-num">{{$index + 1}}</td>
+                    <td class="td-str">
+                    	<p ng-hide="!editingData[key]">{{menu.name}}</p>
+                    	<p ng-show="!editingData[key]"><input type="text" ng-model="menu.name"></p>
+                    </td>
+                    <td class="td-str">
+                    	<p ng-hide="!editingData[key]">{{menu.mainDish}}</p>
+                    	<p ng-show="!editingData[key]"><input type="text" ng-model="menu.mainDish"></p>
+                    </td>
+                    <td class="td-str">
+                    	<p ng-hide="!editingData[key]">{{menu.sideDishes}}</p>
+                    	<p ng-show="!editingData[key]"><input type="text" ng-model="menu.sideDishes"></p>
+                    </td>
+                    <td class="td-num">
+                    	<p ng-hide="!editingData[key]">{{menu.price}}</p>
+                    	<p ng-show="!editingData[key]"><input type="text" ng-model="menu.price"></p>
+                    </td>
+                    <td class="td-num"><a href="#/menus/{{key}}/add">Edit</a>&nbsp|&nbsp<a href="" ng-click="deleteMenu(key)">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

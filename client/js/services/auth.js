@@ -69,7 +69,7 @@
 				return deferred.promise;
 			}
 		};
-		
+
 		return Auth;
 	}]);
 })();

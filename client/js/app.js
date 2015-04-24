@@ -6,18 +6,19 @@
 			'lunchController',
 			'lunchServices',
 			'firebase',
-			'ngCookies'
+			'ngCookies',
+			'720kb.datepicker'
 		]);
 
 	lunchApp.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
-		when('/menus', {
+		when('/menus/:date/add', {
 			templateUrl: 'views/menu.html',
 			controller: 'menuCtrl'
 		}).
-		when('/menus/:menuId/view', {
-			templateUrl: 'views/view.html',
-			controller: 'menuCtrl'
+		when('/date', {
+			templateUrl: 'views/date.html',
+			controller: 'dateCtrl'
 		}).
 		when('/login', {
 			templateUrl: 'views/login.html',
@@ -28,7 +29,7 @@
 			controller: 'authCtrl'
 		}).
 		otherwise({
-			redirectTo: '/menus'
+			redirectTo: '/date'
 		});
 	}]).run(['$location', 'Session', '$rootScope', function($location, Session, $rootScope) {
 		$rootScope.$on('$locationChangeStart', function(event, next, prev) {
