@@ -9,7 +9,7 @@
 
 		$scope.addDate = function() {
 			// var now = moment().format('YYYY-MM-DD');
-			var response = Menus.setData($scope.date, 'menu1');
+			var response = Menus.setData($scope.date);
 
 			if (response) {
 				$location.path('/menus/' + $scope.date + '/add');

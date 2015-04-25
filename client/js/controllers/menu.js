@@ -20,16 +20,14 @@
 				});
 			};
 
-			$scope.editingData = [];
-
 			$scope.deleteMenu = function(menuId) {
 				console.log(menuId);
 				Menus.deleteMenu(date, menuId);
 			};
 
-			$scope.updateMenu = function(menuId) {
-				console.log(menuId);
-				Menus.updateMenu(date, menuId, $scope.menu);
+			$scope.updateMenu = function(menu) {
+				console.log(menu);
+				$scope.menus.$save(menu);
 			};
 		}
 	};

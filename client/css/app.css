@@ -154,3 +154,7 @@ body{
 	border: 1px solid #A6A5A5;
 	width: 272px;
 }
+.current{
+	background: #D5D5D5;
+	font-weight: bold;
+}

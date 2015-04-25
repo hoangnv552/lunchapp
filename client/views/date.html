@@ -21,9 +21,9 @@
 				<th class="client-th3">Action</th>
 			</tr>
 			<tr ng-repeat="(key, date) in menusDate">
-				<td class="td-str"><p>{{$index +1}}</p></td>
+				<td class="td-num"><p>{{$index +1}}</p></td>
 				<td class="td-num"><p>{{key}}</p></td>
-				<td class="td-num"><a href="#/menus/{{key}}/add">View</a>&nbsp|&nbsp<a href="" ng-click="deleteDate(key)">Delete</a></td>
+				<td class="td-num"><a href="#/menus/{{key}}/add">View</a>&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp<a href="" ng-click="deleteDate(key)">Delete</a></td>
 			</tr>
 		</table>
 	</div>

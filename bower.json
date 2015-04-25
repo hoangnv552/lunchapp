@@ -19,6 +19,7 @@
     "firebase": "~2.2.4",
     "angularfire": "~1.0.0",
     "moment": "~2.10.2",
-    "angularjs-datepicker": "~0.2.4"
+    "angularjs-datepicker": "~0.2.4",
+    "jquery": "~2.1.3"
   }
 }

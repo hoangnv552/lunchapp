@@ -1,5 +1,5 @@
 .projectInfo h3{
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 .project-search{
 	margin-top: 20px;
@@ -44,12 +44,9 @@
 	color: #ffffff;
 }
 table, th, td{
-	border: 1px solid #e7e7e7;
+	border: 1px solid #C0C0C0;
 	border-collapse: collapse;
-	font-size: 14px;
-}
-.table td{
-	height: 50px;
+	font-size: 12px;
 }
 .table td input{
 	height: 30px;
@@ -72,7 +69,7 @@ table, th, td{
 
 /*--------------Client----------------*/
 .client-th1{
-	width: 253px;
+	width: 40px;
 }
 .client-th2{
 	width: 250px;
@@ -95,7 +92,7 @@ table, th, td{
 
 /*---------------Quotation--------------*/
 .quotation-th1{
-	width: 65px;
+	width: 20px;
 }
 .quotation-th2{
 	width: 180px;
@@ -219,7 +216,8 @@ table, th, td{
 	height: 110%;
 	text-align: right;
 	margin-top: -44px;
-	margin-right: 81px;
+	margin-right: 45px;
+	font-weight: bold;
 }
 .quotation-memo textarea{
 	width: 100%;
@@ -509,6 +507,7 @@ table, th, td{
 .container{
 	box-shadow: 1px 1px 1px 1px #d3e2e9;
 	margin-bottom: 0px;
+	padding-bottom: 50px;
 }
 .page{
 	float: right;
@@ -655,8 +654,6 @@ table, th, td{
 	float: left;
   	width: 100%;
   	height: 45px;
-  	margin-bottom: 15px;
-  	border-bottom: 1px solid #d1d1d1;
 }
 .save-button-quotation .save{
 	background: #0083d1;
@@ -700,4 +697,7 @@ input[type="password"] {
 }
 .left {
 	text-align: left;
+}
+.tableTotal .quotation-th1{
+	width: 40px;
 }

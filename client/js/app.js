@@ -1,3 +1,6 @@
+// $(":checkbox").on('change', function () {
+//     $("[name='menu']").not(this).prop('checked', false);
+// });
 ;(function() {
 	'use strict';
 
@@ -19,6 +22,10 @@
 		when('/date', {
 			templateUrl: 'views/date.html',
 			controller: 'dateCtrl'
+		}).
+		when('/menus/register', {
+			templateUrl: 'views/register-menu.html',
+			controller: 'registerMenuCtrl'
 		}).
 		when('/login', {
 			templateUrl: 'views/login.html',
@@ -48,4 +55,5 @@
 	}]);
 
 	lunchApp.constant('FIREBASE_URL', 'https://lunchappntq.firebaseio.com/');
+	lunchApp.constant('TIME', 2030);
 })();

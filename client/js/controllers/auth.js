@@ -9,7 +9,8 @@
 				if (response.uid) {
 					Session.login();
 					console.log($cookieStore.get('isLoggedIn'));
-					$rootScope.username = response.password.email;
+
+					$cookieStore.put('username', response.password.email);
 				}
 			});
 		};

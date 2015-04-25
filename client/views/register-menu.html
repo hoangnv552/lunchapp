@@ -1,0 +1,90 @@
+<div class="project">
+	<div class="projectInfo">
+		<h3>Menu {{now}}</h3>
+	</div>
+	<div ng-show="error">
+		<h2>{{error}}</h2>
+	</div>
+	<div ng-hide="error">
+		<div class="project-table quotation-table">
+			<table ng-table="tableParams" class="table">
+				<tr>
+					<th class="client-th1">No.</th>
+					<th class="client-th1">Select</th>
+					<th class="quotation-th2">Name</th>
+					<th class="quotation-th2">Main dish</th>
+					<th class="quotation-th3">Side dishes</th>
+					<th class="quotation-th4">Price</th>
+				</tr>
+				<tbody>
+					<tr ng-repeat="(key, menu) in menus">
+						<td class="td-num">{{$index + 1}}</td>
+						<td class="td-num"><input type="checkbox" ng-model="selectedId" ng-click="toggleSelection(menu)" class="checkbox-menu"></td>
+						<td class="td-str">
+							<p>{{menu.name}}</p>
+						</td>
+						<td class="td-str">
+							<p>{{menu.mainDish}}</p>
+						</td>
+						<td class="td-str">
+							<p>{{menu.sideDishes}}</p>
+						</td>
+						<td class="td-str">
+							<p>{{menu.price}}</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="button" ng-show="isExpire">
+			<button ng-click="registerMenu()"><a href="">Add<a></button>
+		</div>
+		<div class="project-table quotation-table">
+			<table ng-table="tableParams" class="table">
+				<tr>
+					<th class="quotation-th1">No.</th>
+					<th class="quotation-th2">User name</th>
+					<th class="quotation-th2">Menu</th>
+					<th class="quotation-th4">Price</th>
+				</tr>
+				<tbody>
+					<tr ng-repeat="user in userWithMenu" ng-class="user.username == username ? 'current' : ''">
+						<td class="td-num">{{$index + 1}}</td>
+						<td class="td-str">
+							<p>{{user.username}}</p>
+						</td>
+						<td class="td-str">
+							<p>{{user.name}}</p>
+						</td>
+						<td class="td-num">
+							<p>{{user.price}}</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="quotation-total">
+			<label><p>Total</p></label><div class="total-number"><p>{{totalPrice}} K</p></div>
+		</div>
+		<div class="project-table quotation-table">
+			<table ng-table="tableParams" class="tableTotal">
+				<tr>
+					<th class="quotation-th1">No.</th>
+					<th class="quotation-th2">Menu</th>
+					<th class="quotation-th4">Total</th>
+				</tr>
+				<tbody>
+					<tr ng-repeat="item in sumtotal">
+						<td class="td-num">{{$index + 1}}</td>
+						<td class="td-str">
+							<p>{{item.menu}}</p>
+						</td>
+						<td class="td-num">
+							<p>{{item.total}}</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

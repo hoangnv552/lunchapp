@@ -25,7 +25,7 @@
     <div class="project-table quotation-table">
         <table ng-table="tableParams" class="table">
             <tr>
-                <th class="quotation-th1">No.</th>
+                <th class="client-th1">No.</th>
                 <th class="quotation-th2">Name</th>
                 <th class="quotation-th2">Main dish</th>
                 <th class="quotation-th3">Side dishes</th>
@@ -47,15 +47,15 @@
                     	<p ng-hide="isEdit">{{menu.sideDishes}}</p>
                     	<p ng-show="isEdit"><input type="text" ng-model="menu.sideDishes" class="sidedishes"></p>
                     </td>
-                    <td class="td-str">
+                    <td class="td-num">
                     	<p ng-hide="isEdit">{{menu.price}}</p>
                     	<p ng-show="isEdit"><input type="text" ng-model="menu.price" class="price"></p>
                     </td>
 
                     <td class="td-num">
                         <a ng-hide="isEdit" href="" ng-click="isEdit=true">Edit</a>
-                        <a ng-show="isEdit" href="" ng-click="updateMenu(key); isEdit=false">Update</a>
-                        &nbsp|&nbsp
+                        <a ng-show="isEdit" href="" ng-click="updateMenu(menu); isEdit=false">Update</a>
+                        &nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp
                         <a href="" ng-click="deleteMenu(key)">Delete</a>
                     </td>
                 </tr>
