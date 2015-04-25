@@ -1,18 +1,12 @@
 ;(function() {
 	'use strict';
 
-	var registerMenuCtrl = function($scope, $routeParams, Menus, $cookieStore, TIME) {
+	var registerMenuCtrl = function($scope, $routeParams, Menus, $cookieStore, TIME, Session) {
 		$scope.selectedId = [];
 		var now = moment().format('YYYY-MM-DD');
 		$scope.now = now;
-		var username = $cookieStore.get('username');
-		username = username.replace(/@[^ ]*/g, '');
-		username = username.replace('$', '');
-		username = username.replace('.', '');
-		username = username.replace('#', '');
-		username = username.replace('-', '');
-		username = username.replace('%', '');
-
+		var username = Session.username();
+		
 		var time = moment().format('HHmm');
 
 		if (parseInt(time) <= TIME) {
@@ -91,6 +85,6 @@
 		};
 	};
 
-	registerMenuCtrl.$inject = ['$scope', '$routeParams', 'Menus', '$cookieStore', 'TIME'];
+	registerMenuCtrl.$inject = ['$scope', '$routeParams', 'Menus', '$cookieStore', 'TIME', 'Session'];
 	angular.module('lunchController').controller('registerMenuCtrl', registerMenuCtrl);
 })();

@@ -19,9 +19,17 @@
 			templateUrl: 'views/menu.html',
 			controller: 'menuCtrl'
 		}).
-		when('/date', {
+		when('/date/create', {
 			templateUrl: 'views/date.html',
 			controller: 'dateCtrl'
+		}).
+		when('/menus', {
+			templateUrl: 'views/date-view.html',
+			controller: 'dateViewCtr'
+		}).
+		when('/menus/:date/view', {
+			templateUrl: 'views/menus-detail.html',
+			controller: 'dateViewCtr'
 		}).
 		when('/menus/register', {
 			templateUrl: 'views/register-menu.html',
@@ -36,7 +44,7 @@
 			controller: 'authCtrl'
 		}).
 		otherwise({
-			redirectTo: '/date'
+			redirectTo: '/menus/register'
 		});
 	}]).run(['$location', 'Session', '$rootScope', function($location, Session, $rootScope) {
 		$rootScope.$on('$locationChangeStart', function(event, next, prev) {
@@ -55,5 +63,6 @@
 	}]);
 
 	lunchApp.constant('FIREBASE_URL', 'https://lunchappntq.firebaseio.com/');
-	lunchApp.constant('TIME', 2030);
+	lunchApp.constant('TIME', 2330);
 })();
+
