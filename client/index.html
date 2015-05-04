@@ -30,18 +30,18 @@
 	<script src="js/controllers/auth.js"></script>
 	<script src="js/controllers/date.js"></script>
 	<script src="js/controllers/register-menu.js"></script>
+	<script src="js/controllers/date-view-menus.js"></script>
 
 </head>
 <body ng-controller="appController">
-	{{isLoggedIn()}}
 	<div ng-show="isLoggedIn()">
 		<div class="contents">
 			<div class="header">
 				<div class="banner">
 					<img src="./img/logo.png" alt="">
 					<h2>Lunch App NTQ Sytems</h2>
-					<h3>{{username}}</h3>
 					<div class="login">
+						<span class="username">Hi {{username}}</span>
 						<span class="icon-login"><img src="./img/icon-login.png"></span>
 						<a href="" ng-click="logout()">Logout</a>
 						<span class="icon-comma"><img src="./img/comma.png"></span>
@@ -50,7 +50,8 @@
 				<div class="menu">
 					<ul>
 						<li ng-class="{active: isActive('/menus/register')}"><a href="#/menus/register">Register menu</a></li>
-						<li ng-class="{active: isActive('/date')}"><a href="#/date">Date</a></li>
+						<li ng-class="{active: isActive('/menus')}"><a href="#/menus">Menu days</a></li>
+						<li ng-class="{active: isActive('/date/create')}"><a href="#/date/create">Create menu</a></li>
 					</ul>
 				</div>
 			</div>

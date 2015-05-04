@@ -15,6 +15,11 @@ body{
 .banner{
 	height: 85px;
 	width: 100%;
+	position: relative;
+}
+.banner .username{
+	position: absolute;
+	right: 120px;
 }
 .banner img{
 	margin-top: 15px;
@@ -123,11 +128,18 @@ body{
 	height: 31px;
 	border: 1px solid #E1E1E1;
 }
+.button{
+	position: relative;
+	width: 298px;
+}
 .button button{
 	background: #0083d1;
 	border: none;
-	padding: 8px 12px;
+	padding: 9px 15px;
 	cursor: pointer;
+	position: absolute;
+  	left: 305px;
+  	top: 15px;
 }
 .button button a{
 	text-decoration: none;

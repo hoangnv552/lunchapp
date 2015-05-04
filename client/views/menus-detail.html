@@ -1,0 +1,56 @@
+<div class="project">
+	<div class="projectInfo">
+		<h3>Menu {{now}}</h3>
+	</div>
+	<div class="project-table quotation-table">
+		<table ng-table="tableParams" class="table">
+			<tr>
+				<th class="quotation-th1">No.</th>
+				<th class="quotation-th2">User name</th>
+				<th class="quotation-th4">Menu</th>
+				<th class="quotation-th2">Main dish</th>
+				<th class="quotation-th4">Price</th>
+			</tr>
+			<tbody>
+				<tr ng-repeat="user in userWithMenu" ng-class="user.username == username ? 'current' : ''">
+					<td class="td-num">{{$index + 1}}</td>
+					<td class="td-str">
+						<p>{{user.username}}</p>
+					</td>
+					<td class="td-str">
+						<p>{{user.name}}</p>
+					</td>
+					<td class="td-str">
+						<p>{{user.mainDish}}</p>
+					</td>
+					<td class="td-num">
+						<p>{{user.price}}</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="quotation-total">
+		<label><p>Total</p></label><div class="total-number"><p>{{totalPrice}} K</p></div>
+	</div>
+	<div class="project-table quotation-table">
+		<table ng-table="tableParams" class="tableTotal">
+			<tr>
+				<th class="quotation-th1">No.</th>
+				<th class="quotation-th2">Menu</th>
+				<th class="quotation-th4">Total</th>
+			</tr>
+			<tbody>
+				<tr ng-repeat="item in sumtotal">
+					<td class="td-num">{{$index + 1}}</td>
+					<td class="td-str">
+						<p>{{item.menu}}</p>
+					</td>
+					<td class="td-num">
+						<p>{{item.total}}</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
