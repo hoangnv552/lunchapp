@@ -132,6 +132,10 @@ body{
 	position: relative;
 	width: 298px;
 }
+.buttonRegister{
+	position: relative;
+	width: 298px;
+}
 .button button{
 	background: #0083d1;
 	border: none;
@@ -141,7 +145,17 @@ body{
   	left: 305px;
   	top: 15px;
 }
+.buttonRegister button{
+	background: #0083d1;
+	border: none;
+	padding: 9px 15px;
+	cursor: pointer;
+}
 .button button a{
+	text-decoration: none;
+	color: #fff;
+}
+.buttonRegister button a{
 	text-decoration: none;
 	color: #fff;
 }

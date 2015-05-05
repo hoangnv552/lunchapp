@@ -21,12 +21,14 @@
 			},
 			username: function() {
 				var username = $cookieStore.get('username');
-				username = username.replace(/@[^ ]*/g, '');
-				username = username.replace('$', '');
-				username = username.replace('.', '');
-				username = username.replace('#', '');
-				username = username.replace('-', '');
-				username = username.replace('%', '');
+				if (username) {
+					username = username.replace(/@[^ ]*/g, '');
+					username = username.replace('$', '');
+					username = username.replace('.', '');
+					username = username.replace('#', '');
+					username = username.replace('-', '');
+					username = username.replace('%', '');
+				}
 
 				return username;
 			}
