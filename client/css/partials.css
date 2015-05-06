@@ -430,6 +430,8 @@ table, th, td{
 }
 .login-form a{
 	color: #00a8e6;
+	font-size: 18px;
+  	font-weight: bold;
 }
 
 .login-form label{
@@ -505,7 +507,7 @@ table, th, td{
 	margin-top: 5px;
 }
 .container{
-	box-shadow: 1px 1px 1px 1px #d3e2e9;
+	/*box-shadow: 1px 1px 1px 1px #d3e2e9;*/
 	margin-bottom: 0px;
 	padding-bottom: 50px;
 }
