@@ -408,7 +408,8 @@ table, th, td{
 	width: 400px;
 	margin: 0 auto;
 	padding: 35px 45px 25px 45px;
-	box-shadow: 1px 1px 1px 1px #d3e2e9;
+	box-shadow: 1px 2px 8px 3px rgba(1,1,1,0.3);
+  	background: rgba(255,255,255,0.2);
 }
 .password{
 	margin-top: 35px;
@@ -432,11 +433,13 @@ table, th, td{
 	color: #00a8e6;
 	font-size: 18px;
   	font-weight: bold;
+  	text-shadow: 1px 1px 0px #FFF;
 }
 
 .login-form label{
 	font-size: 14px;
 	font-weight: bolder;
+	text-shadow: 1px 2px 1px #fff;
 }
 .login-form button{
 	cursor: pointer;
