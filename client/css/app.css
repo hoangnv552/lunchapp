@@ -2,10 +2,12 @@ body{
 	margin: 0;
 	font-family: sans-serif;
 	font-size: 14px;
+	background: url('../img/bg.jpeg');
 }
 .contents{
 	width: 1030px;
 	margin: 0 auto;
+	background: #fff;
 }
 .header{
 	width: 1000px;
@@ -19,7 +21,7 @@ body{
 }
 .banner .username{
 	position: absolute;
-	right: 120px;
+	right: 100px;
 }
 .banner img{
 	margin-top: 15px;
@@ -34,7 +36,7 @@ body{
 	float: right;
 	width: 85px;
 	height: 20px;
-	margin-top: -50px;
+	margin-top: 20px;
 }
 .login .icon-login{
 	float: left;
@@ -97,6 +99,7 @@ body{
 	height: 60px;
 	border-top: 1px solid #d1d1d1;
 	margin-top: 40px;
+	background: #fff;
 }
 .footer h2{
 	font-size: 14px;

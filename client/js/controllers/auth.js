@@ -6,23 +6,27 @@
 
 			console.log($cookieStore.get('isLoggedIn'));
 			Auth.authWithPassword($scope.user).then(function(response) {
+				console.log(response);
 				if (response.uid) {
 					Session.login();
 					console.log($cookieStore.get('isLoggedIn'));
 
 					$cookieStore.put('username', response.password.email);
 				}
+			}, function(error) {
+				$scope.errorMessage = error.message;
 			});
 		};
 
 		$scope.register = function() {
 			if ($scope.user.password === $scope.user.repassword) {
-				delete $scope.user.repassword;
 
 				Auth.createUser($scope.user).then(function(response) {
 					if (response === true) {
 						$location.path('/login');
 					}
+				}, function(error) {
+					$scope.errorMessage = error.message;
 				});
 			} else {
 				$scope.error = 'Password != Repassword';
