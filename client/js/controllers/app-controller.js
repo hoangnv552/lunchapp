@@ -3,6 +3,8 @@
 
 	var appController = function($scope, $location, Session, Auth, $cookieStore) {
 		$scope.username = Session.username();
+		$scope.isAdmin = Session.isAdmin();
+		console.log($scope.isAdmin);
 		$scope.isLoggedIn = function() {
 			return Session.isLoggedIn();
 		};
@@ -15,6 +17,7 @@
 			console.log(1233);
 			Auth.logout();
 			$cookieStore.remove('username');
+			$cookieStore.remove('isAdmin');
 			return Session.logout(true);
 		};
 	};

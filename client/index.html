@@ -51,7 +51,7 @@
 					<ul>
 						<li ng-class="{active: isActive('/menus/register')}"><a href="#/menus/register">Register menu</a></li>
 						<li ng-class="{active: isActive('/menus')}"><a href="#/menus">Menu days</a></li>
-						<li ng-class="{active: isActive('/date/create')}"><a href="#/date/create">Create menu</a></li>
+						<li ng-show="isAdmin" ng-class="{active: isActive('/date/create')}"><a href="#/date/create">Create menu</a></li>
 					</ul>
 				</div>
 			</div>

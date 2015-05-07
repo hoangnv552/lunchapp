@@ -17,6 +17,7 @@
 
 		Menus.get(now).$loaded().then(function(data) {
 			if (data) {
+				console.log(data);
 				$scope.menus = data;
 			} else {
 				$scope.error = 'Menu today not created';

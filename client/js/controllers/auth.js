@@ -10,6 +10,9 @@
 				if (response.uid) {
 					Session.login();
 					console.log($cookieStore.get('isLoggedIn'));
+					if (response.uid === 'simplelogin:10') {
+						$cookieStore.put('isAdmin', true);
+					}
 
 					$cookieStore.put('username', response.password.email);
 				}

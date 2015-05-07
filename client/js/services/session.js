@@ -10,13 +10,21 @@
 			login: function() {
 				$cookieStore.put('isLoggedIn', true);
 
-				$location.path('/menus');
+				$location.path('/menus/register');
 			},
 			logout: function(needRedirect) {
 				$cookieStore.put('isLoggedIn', false);
 				$cookieStore.remove('username');
 				if (needRedirect) {
 					$location.path('/login');
+				}
+			},
+			isAdmin: function() {
+				var isAdmin = $cookieStore.get('isAdmin');
+				if (isAdmin) {
+					return true;
+				} else {
+					return false;
 				}
 			},
 			username: function() {
