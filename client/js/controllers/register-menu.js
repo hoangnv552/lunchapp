@@ -6,7 +6,7 @@
 		var now = moment().format('YYYY-MM-DD');
 		$scope.now = now;
 		var username = Session.username();
-		
+
 		var time = moment().format('HHmm');
 
 		if (parseInt(time) <= TIME) {
@@ -17,7 +17,6 @@
 
 		Menus.get(now).$loaded().then(function(data) {
 			if (data) {
-				console.log(data);
 				$scope.menus = data;
 			} else {
 				$scope.error = 'Menu today not created';
@@ -80,10 +79,13 @@
 				var menu = $scope.selectedId[0];
 				menu.username = username;
 
-				console.log(menu);
 				Menus.registerMenu(now, username, menu);
 			}
 		};
+
+		$scope.deleteMenuUser = function(userId) {
+			Menus.deleteMenuUser(now, userId);
+		}
 	};
 
 	registerMenuCtrl.$inject = ['$scope', '$routeParams', 'Menus', '$cookieStore', 'TIME', 'Session'];

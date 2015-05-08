@@ -12,8 +12,8 @@
 					<th class="client-th1">No.</th>
 					<th class="client-th1">Select</th>
 					<th class="quotation-th2">Name</th>
-					<th class="quotation-th2">Main dish</th>
-					<th class="quotation-th3">Side dishes</th>
+					<th class="quotation-th3">Main dish</th>
+					<th class="quotation-th2">Side dishes</th>
 					<th class="quotation-th4">Price</th>
 				</tr>
 				<tbody>
@@ -46,9 +46,10 @@
 					<th class="quotation-th2">User name</th>
 					<th class="quotation-th2">Menu</th>
 					<th class="quotation-th4">Price</th>
+					<th class="quotation-th4">Action</th>
 				</tr>
 				<tbody>
-					<tr ng-repeat="user in userWithMenu" ng-class="user.username == username ? 'current' : ''">
+					<tr ng-repeat="(key, user) in userWithMenu" ng-class="user.username == username ? 'current' : ''">
 						<td class="td-num">{{$index + 1}}</td>
 						<td class="td-str">
 							<p>{{user.username}}</p>
@@ -58,6 +59,9 @@
 						</td>
 						<td class="td-num">
 							<p>{{user.price}}</p>
+						</td>
+						<td class="td-num">
+							<p ng-show="user.username == username"><a href="" ng-click="deleteMenuUser(key)">Delete</a></p>
 						</td>
 					</tr>
 				</tbody>

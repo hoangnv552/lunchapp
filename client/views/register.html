@@ -8,9 +8,7 @@
 			<br>
 			<label>Username</label><br>
 			<input type="email" name="input" ng-model="user.email" class="input-text1" required></input>
-			<div role="alert">
-				<span class="error" ng-show="myForm.input.$error.email">Not valid email!</span>
-			</div>
+
 			<label class="error">{{errorName}}</label>
 		</div>
 		<div class="password">

@@ -2,9 +2,14 @@
 	'use strict';
 
 	var appController = function($scope, $location, Session, Auth, $cookieStore) {
-		$scope.username = Session.username();
-		$scope.isAdmin = Session.isAdmin();
-		console.log($scope.isAdmin);
+		$scope.getLoggedInUser = function() {
+			return Session.username();
+		};
+
+		$scope.isAdmin = function() {
+			return Session.isAdmin();
+		};
+
 		$scope.isLoggedIn = function() {
 			return Session.isLoggedIn();
 		};

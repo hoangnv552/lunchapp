@@ -31,6 +31,9 @@
 			deleteMenu: function(date, menuId) {
 				return $firebaseObject(ref.child('menus').child(date).child(menuId)).$remove();
 			},
+			deleteMenuUser: function(date, userId) {
+				return $firebaseObject(ref.child('registerMenu').child(date).child(userId)).$remove();
+			},
 			updateMenu: function(date, menuId, menu) {
 				return $firebaseArray(ref.child('menus').child(date).child(menuId).set(menu));
 			}
