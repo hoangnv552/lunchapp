@@ -16,10 +16,13 @@
 		}
 
 		Menus.get(now).$loaded().then(function(data) {
-			if (data) {
-				$scope.menus = data;
-			} else {
+			if (data.$value === null) {
+				
 				$scope.error = 'Menu today not created';
+				console.log(data.$value);
+			} else {
+				console.log(123);
+				$scope.menus = data;
 			}
 
 		});

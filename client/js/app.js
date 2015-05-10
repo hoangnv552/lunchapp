@@ -49,16 +49,21 @@
 	}]).run(['$location', 'Session', '$rootScope', function($location, Session, $rootScope) {
 		$rootScope.$on('$locationChangeStart', function(event, next, prev) {
 
-			// if (next.split('#')[1] !== '/login') {
-				// if (!Session.isLoggedIn()) {
-				// 	console.log(111);
-				// 	event.preventDefault();
-				// 	$location.path('/login');
-				// } else {
-				// 	console.log(222);
-				// 	Session.logout(false);
-				// }
-			// }
+			if (next.split('#')[1] !== '/login') {
+				if (!Session.isLoggedIn()) {
+					if (next.split('#')[1] === '/register') {
+						$location.path('/register');
+					} else {
+						console.log(111);
+						event.preventDefault();
+						$location.path('/login');
+					}
+
+				} else {
+					console.log(222);
+					// Session.logout(false);
+				}
+			}
 		});
 	}]);
 
