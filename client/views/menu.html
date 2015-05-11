@@ -61,5 +61,12 @@
                 </tr>
             </tbody>
         </table>
+        <br>
+        <label>Memo: </label><br>
+        <span class="error">{{notify}}</span>
+        <span><textarea ng-model="memo" cols="123" rows="3"></textarea></span>
+        <div class="buttonRegister">
+            <button ng-click="addMemo()"><a href="">Save Memo<a></button>
+        </div>
     </div>
 </div>

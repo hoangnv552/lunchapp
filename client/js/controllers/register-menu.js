@@ -15,6 +15,10 @@
 			$scope.isExpire = false;
 		}
 
+		Menus.getMemo(now).$loaded().then(function(data) {
+			$scope.memo = data.memo;
+		});
+
 		Menus.get(now).$loaded().then(function(data) {
 			if (data.$value === null) {
 

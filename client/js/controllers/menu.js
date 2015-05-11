@@ -10,6 +10,10 @@
 				$scope.menus = data;
 			});
 
+			Menus.getMemo(date).$loaded().then(function(data) {
+				$scope.memo = data.memo;
+			});
+
 			$scope.addMenu = function() {
 				console.log($scope.menu);
 				Menus.create(date, $scope.menu).then(function(response) {
@@ -29,6 +33,17 @@
 				console.log(menu);
 				$scope.menus.$save(menu);
 			};
+
+			$scope.addMemo = function() {
+				if ($scope.memo) {
+					var result = Menus.addMemo(date, $scope.memo);
+					if (result) {
+						$scope.notify = "Save memo success";
+					}
+				} else {
+					$scope.notify = "You have not entered Memo";
+				}
+			}
 		}
 	};
 

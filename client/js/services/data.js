@@ -11,6 +11,14 @@
 				var menus = $firebaseArray(ref.child('menus').child(id));
 				return menus.$add(menu);
 			},
+			addMemo: function(date, memo) {
+				if (date && memo) {
+					ref.child('notify').child(date).child('memo').set(memo);
+					return true;
+				} else {
+					return false;
+				}
+			},
 			setData: function(id) {
 				menusRef.child(id).set({
 				});
@@ -21,6 +29,9 @@
 			},
 			get: function(menuId) {
 				return $firebaseObject(ref.child('menus').child(menuId));
+			},
+			getMemo: function(date) {
+				return $firebaseObject(ref.child('notify').child(date));
 			},
 			userWithMenu: function(menuId) {
 				return $firebaseObject(ref.child('registerMenu').child(menuId));
