@@ -17,8 +17,8 @@
 
 		Menus.get(now).$loaded().then(function(data) {
 			if (data.$value === null) {
-				
-				$scope.error = 'Menu today not created';
+
+				$scope.error = 'Today\'s menu has not created';
 				console.log(data.$value);
 			} else {
 				console.log(123);
@@ -62,7 +62,7 @@
 				});
 				$scope.sumtotal = arrTotalUserMenu;
 			} else {
-				$scope.error = 'Menu today not created';
+				$scope.error = 'Today\'s menu has not created';
 			}
 		});
 
@@ -88,7 +88,7 @@
 
 		$scope.deleteMenuUser = function(userId) {
 			Menus.deleteMenuUser(now, userId);
-		}
+		};
 	};
 
 	registerMenuCtrl.$inject = ['$scope', '$routeParams', 'Menus', '$cookieStore', 'TIME', 'Session'];

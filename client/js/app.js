@@ -68,6 +68,6 @@
 	}]);
 
 	lunchApp.constant('FIREBASE_URL', 'https://lunchappntq.firebaseio.com/');
-	lunchApp.constant('TIME', 2330);
+	lunchApp.constant('TIME', 2315);
 })();
 

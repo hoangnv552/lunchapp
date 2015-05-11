@@ -10,7 +10,7 @@
 			$scope.menusDate = data;
 			data.forEach(function(data, key) {
 				days.push(key);
-			})
+			});
 		});
 
 		$scope.addDate = function() {
