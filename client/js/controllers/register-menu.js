@@ -68,18 +68,19 @@
 
 		$scope.toggleSelection = function(idMenu) {
 
-			var idx = $scope.selectedId.indexOf(idMenu);
+			// var idx = $scope.selectedId.indexOf(idMenu);
 
-			if (idx < 0) {
-				$scope.selectedId.push(idMenu);
-			} else {
-				$scope.selectedId.splice(idx, 1);
-			}
+			// if (idx < 0) {
+			// 	$scope.selectedId.push(idMenu);
+			// } else {
+			// 	$scope.selectedId.splice(idx, 1);
+			// }
+			$scope.selectedId = idMenu;
 		};
 
 		$scope.registerMenu = function() {
 			if (parseInt(time) <= TIME) {
-				var menu = $scope.selectedId[0];
+				var menu = $scope.selectedId;
 				menu.username = username;
 
 				Menus.registerMenu(now, username, menu);

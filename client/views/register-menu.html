@@ -19,7 +19,7 @@
 				<tbody>
 					<tr ng-repeat="(key, menu) in menus">
 						<td class="td-num">{{$index + 1}}</td>
-						<td class="td-num"><input type="checkbox" ng-model="selectedId" ng-click="toggleSelection(menu)" class="checkbox-menu"></td>
+						<td class="td-num"><input type="radio" name="menu" ng-model="selectedId" ng-click="toggleSelection(menu)" class="checkbox-menu"></td>
 						<td class="td-str">
 							<p>{{menu.name}}</p>
 						</td>
@@ -62,29 +62,6 @@
 						</td>
 						<td class="td-num">
 							<p ng-show="user.username == username"><a href="" ng-click="deleteMenuUser(key)">Delete</a></p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="quotation-total">
-			<label><p>Total</p></label><div class="total-number"><p>{{totalPrice}} K</p></div>
-		</div>
-		<div class="project-table quotation-table">
-			<table ng-table="tableParams" class="tableTotal">
-				<tr>
-					<th class="quotation-th1">No.</th>
-					<th class="quotation-th2">Menu</th>
-					<th class="quotation-th4">Total</th>
-				</tr>
-				<tbody>
-					<tr ng-repeat="item in sumtotal">
-						<td class="td-num">{{$index + 1}}</td>
-						<td class="td-str">
-							<p>{{item.menu}}</p>
-						</td>
-						<td class="td-num">
-							<p>{{item.total}}</p>
 						</td>
 					</tr>
 				</tbody>
